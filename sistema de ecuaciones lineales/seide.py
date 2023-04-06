@@ -4,7 +4,7 @@ from sympy import Abs
 # M=[[columna1],[columna2]]
 MATRIZ_M=[[0,-1/10,0],[-1/10, 0, -1/10],[0, -1/10, 0]]
 MATRIZ_N=[11/10, 12/10, 11/10]
-LIM=5
+LIM=1
 LATITUD= 10**-100
 
 def seide():
@@ -15,6 +15,7 @@ def seide():
         matriz_anterior=matiz_x[:]
         for j in range(n):
             matiz_x[j]=MATRIZ_M[j][0]*matiz_x[0]+ MATRIZ_M[j][1]*matiz_x[1]+ MATRIZ_M[j][2]*matiz_x[2]+MATRIZ_N[j]
+            print(matiz_x)
         
         print(f'Iteracion {i+1}: {matiz_x}')
         
@@ -70,5 +71,5 @@ def p_list():
     return p_list
 
 seide()
-calcular_beta()
+# calcular_beta()
 

@@ -3,7 +3,9 @@ from sympy import symbols, diff
 
 #definir la funcion
 x= sympy.Symbol('x')
-FUNCTION= x*sympy.exp(x)-2
+FUNCTION= sympy.sin(x)-sympy.log(x)
+TOL=10**-100
+LIM = 5
 
 #verificar si el punto es valido
 def valido(xo):
@@ -23,20 +25,20 @@ def df_2(xo):
     f= FUNCTION
     return sympy.diff(sympy.diff(f, x), x).subs(x,xo)
 
-def newton(xo, tol, n_max):
+def newton(xo):
     x= sympy.Symbol('x')
     f= FUNCTION
-    print(f'It\t\t\tAproxRaiz\t\t\tError')
     i=0
     error= 10**6
-    while error> tol and i<n_max:
+    while error> TOL and i<LIM:
         xn= xo-FUNCTION.subs(x, xo)/df(xo)
         error=abs(xn-xo)
         i+=1
-        print(f'{i}\t\t\t{xn}\t\t{error}')
+        d={'iteracion': i, 'aproximacion': xn, 'error': error}
+        print(d)
         xo=xn
     return xn
 
-print(valido(0.7))
-print(newton(0.7, 0.00000005, 5))
+print(valido(2.3))
+print(newton(2.3))
 

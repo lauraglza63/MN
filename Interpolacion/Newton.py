@@ -1,7 +1,7 @@
 import sympy
 
 # numlist=[[x],[y]]
-NUM_LIST=[[0,1,-1,2],[1,2.72,0.37,7.39]]
+NUM_LIST=[[0,1,-1],[1,2.72,0.37]]
 ERROR= 10**-10
 # tamaño del polinomio, para hacer un polinomio de grado n necesito n+2 nodos
 LIM= len(NUM_LIST[0])-2
@@ -38,4 +38,4 @@ def inter_newton(x):
 
 print(tabla_primerafila_dif())
 
-inter_newton(1.8)
+inter_newton(0.5)

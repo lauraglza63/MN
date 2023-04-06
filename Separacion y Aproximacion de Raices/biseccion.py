@@ -3,9 +3,9 @@ import sympy
 # los intervalos tienen q ser con numeros con comas o me da error sympy
 
 x= sympy.Symbol('x')
-FUNCTION= sympy.exp(-x)-sympy.log(x)
+FUNCTION= sympy.sin(x)-sympy.log(x)
 ERROR= 10**-100
-LIM=5
+LIM=3
 
 def biseccion(a,b):
     Error= (b-a)/2
@@ -24,4 +24,4 @@ def biseccion(a,b):
         i+=1
         
 
-biseccion( 1, 1.5)
+biseccion( 2, 2.5)

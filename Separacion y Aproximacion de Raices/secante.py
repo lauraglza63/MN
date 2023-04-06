@@ -4,7 +4,7 @@ from sympy.functions import Abs
 # los numeros a pasar al evaluar las funciones tienen q ser numeros con comas o me da error sympy
 
 x= sympy.Symbol('x')
-FUNCTION= x**5-4*x**3+3*x**2-2*x+1
+FUNCTION= sympy.sin(x)-sympy.log(x)
 ERROR= 0.5*10**-4
 LIM=20
 
@@ -17,6 +17,7 @@ def secante(Xa, Xb):
     while Error >= ERROR and i<LIM:
         Xc=Xb-(Xb-Xa)/(Yb-Ya)*Yb
         Error=Abs(Xc-Xb)
+        # 'fa':Ya, 'fb': Yb,
         d={'Xa':Xa, 'Xb': Xb, 'Aproximacion': Xc,'error': Error}
         print(d)
         Yc=FUNCTION.subs(x,Xc)
@@ -29,4 +30,4 @@ def secante(Xa, Xb):
         i+=1
 
 #para elegir Xa y Xb lo hago a traves del grafico, agrando y puntos mas cercanos
-secante(0.643, 0.644)
+secante(2.22, 2.219)

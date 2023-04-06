@@ -1,7 +1,7 @@
 import sympy
 
 x= sympy.Symbol('x')
-FUNCTION1= x**5-4*x**3+3*x**2-2*x+1
+FUNCTION1= sympy.sin(x)-sympy.log(x)
 FUNCTION2= x**2
 
 def formulaLarange(B, Ao, k):
@@ -20,4 +20,4 @@ print(formulaLarange(4, 1, 1))
 
 # print(evaluar_funcion(-0.5))
 
-# bolzano(1, 1.5)
+bolzano(2, 2.5)

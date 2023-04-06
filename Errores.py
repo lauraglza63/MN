@@ -10,6 +10,9 @@ def errorAbs(X, Xa):
 def errorRel(EAbs, X):
     return EAbs/Abs(X)
 
+def EAbs_de_errorRel(ERel, X):
+    return Abs(X)*ERel
+
 def conseguirErrorAbsMax(exponente):
     return 0.5*(10**exponente)
 
@@ -26,5 +29,7 @@ def ultimaCifraExacta(error):
     return result
 
 
-print(ultimaCifraExacta(0.00078))
-print(errorRel(7, 8.5))
+# print(ultimaCifraExacta())
+# print(errorRel(7, 8.5))
+
+print(EAbs_de_errorRel(0.1/100, 0.0000785))
