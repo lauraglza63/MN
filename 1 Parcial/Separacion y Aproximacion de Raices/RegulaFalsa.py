@@ -3,7 +3,7 @@ from sympy import Abs
 from sympy.abc import x
 # los intervalos tienen q ser con numeros con comas o me da error sympy
 
-FUNCTION= sympy.sympify('sin(x)-ln(x)')
+FUNCTION= x**3-2*x+1
 ERROR= 10**-10
 LIM=3
 
@@ -30,4 +30,5 @@ def regula_falsa(a, b):
         X_anterior=Xo
         i+=1
 
-regula_falsa(2.0, 2.5)
+regula_falsa(0.6, 0.7
+)
